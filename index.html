@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--
+http://jasonwatmore.com/post/2016/06/22/nodejs-setup-simple-http-server-local-web-server
+https://github.com/processing/p5.js/wiki/Local-server
+http-server
+http-server -C-1 has no cache
+http-server -C1 has a 1 second cache
+//with python 3.x
+python -m http.server
+
+//with python 2.x 
+python -m SimpleHTTPServer
+navigate to http://localhost:8000 in browser
+-->
+<html>
+<meta charset="utf-8">
+<head>
+  <style>
+	canvas{
+		border:1px solid #d3d3d3;
+		background-color: #f1f1f1;
+	}
+	#circle {
+	    background-image: url("jump2.png");
+	    width: 60px;
+	    height: 60px;
+	    border-radius: 50%;
+	    position:absolute;
+	    left:600px;
+    	top:350px;
+    	z-index: 10;
+	}
+	#tracker{
+	    position:absolute;
+    	background-color: rgba(204, 0, 102, 0);
+	    border: 3px solid #7DFF33;
+	    width: 30px;
+	    height: 30px;
+	    -webkit-border-radius:20px;
+	    -moz-border-radius:20px;
+
+	    left:600px;
+    	top:250px;
+	}
+
+	html, body { height: 100%; padding: 0; margin: 0; }
+		/*div { width: 50%; height: 50%; float: left; } potentially move this into each class individually*/
+	#topLeft { 
+		width: 50%; 
+		height: 50%;
+		float: left; 
+		background: #FFFFFF; 
+	}
+	#topRight { 
+		width: 50%; 
+		height: 50%; 
+		float: left; 
+		background: #FFFFFF; 
+		
+	}
+	#bottomLeft {
+		width: 50%; 
+		height: 50%; 
+		float: left; 
+		background: #FFFFFF; 
+
+	}
+	#bottomRight {
+		width: 50%; 
+		height: 50%; 
+		float: left; 
+		background: #FFFFFF; 
+	}
+
+	#myProgress {
+		width: 100%;
+		background-color: #ddd;
+	}
+
+	#myBar{
+		width: 10%;
+		height: 30px;
+		background-color: #4CAF50;
+		text-align: center;
+		line-height: 30px;
+		color: white;
+	}
+	
+  </style>
+</head>
+<body>
+ 	<div id="circle"></div>
+ 	<div id="tracker"></div>
+ 	<div id="topLeft">topLeft
+ 		<p id = "score"></p>
+ 		<p id = "prediction"></p>
+ 		<p id = "distanceQ2"></p>
+		
+	</div>
+
+
+	<div id="topRight">topRight
+		<p id = "distanceQ1"></p>
+	</div>
+
+	<div id="bottomLeft">bottomLeft
+		<p id = "distanceQ3"></p>
+	</div>
+	<div id="bottomRight">bottomRight
+		<p id = "distanceQ4"></p>
+	</div>
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://rawgit.com/ClintonTak/WebGazerCalibration/master/d3.v3.min.js"></script>
+<script src="https://rawgit.com/ClintonTak/WebGazerCalibration/master/webgazer.js"></script>
+<script src="scripts.js"></script>
+</html>
